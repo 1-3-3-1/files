@@ -2,21 +2,25 @@
 <html>
 
 <body>
-   <video autoplay controls>
+   <video autoplay loop controls>
     <source src="Z9vntBhUKNMMY4TJZ78YdV7lk2ecHI.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
   </video>
    <script type="text/javascript">
       var elem = document.querySelector("video");
       elem.play();
-      if (elem.requestFullscreen) {
-         elem.requestFullscreen();
-      } else if (elem.mozRequestFullScreen) {
-         elem.mozRequestFullScreen();
-      } else if (elem.webkitRequestFullscreen) {
-         elem.webkitRequestFullscreen();
-      } else if (elem.msRequestFullscreen) {
-         elem.msRequestFullscreen();
+      try{
+         if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+         } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+         } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
+         } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+         }
+      }catch(exjs){
+         window.console && console.log(exjs);
       }
    </script>
 </body>
